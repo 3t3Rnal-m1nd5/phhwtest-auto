@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  >
+
+  <title>
+    Respond.io Smart Refresher
+  </title>
+
+  <link
+    rel="stylesheet"
+    href="popup.css"
+  >
+
+</head>
+
+
+<body>
+
+  <div class="app">
+
+
+    <!-- HEADER -->
+
+    <header>
+
+      <div>
+
+        <h1>
+          Respond.io
+        </h1>
+
+        <p>
+          Smart Coordinate Refresher
+        </p>
+
+      </div>
+
+
+      <div
+        id="indicator"
+        class="indicator off"
+      ></div>
+
+    </header>
+
+
+    <!-- NOT RESPOND.IO -->
+
+    <div
+      id="notRespond"
+      class="warning hidden"
+    >
+
+      Open your Respond.io tab first.
+
+    </div>
+
+
+    <!-- MAIN SWITCH -->
+
+    <section>
+
+      <div class="switch-row">
+
+        <div>
+
+          <div class="title">
+            Auto Refresh
+          </div>
+
+          <div class="subtitle">
+            Runs automatically
+          </div>
+
+        </div>
+
+
+        <label class="switch">
+
+          <input
+            id="enabled"
+            type="checkbox"
+          >
+
+          <span class="slider"></span>
+
+        </label>
+
+      </div>
+
+
+      <div class="status-box">
+
+        <span>
+          STATUS
+        </span>
+
+        <strong id="status">
+          Stopped
+        </strong>
+
+      </div>
+
+    </section>
+
+
+    <!-- COORDINATES -->
+
+    <section>
+
+      <h2>
+        Click Location
+      </h2>
+
+
+      <div class="coordinates">
+
+        <div class="coordinate">
+
+          <span>
+            X
+          </span>
+
+          <strong id="x">
+            —
+          </strong>
+
+        </div>
+
+
+        <div class="coordinate">
+
+          <span>
+            Y
+          </span>
+
+          <strong id="y">
+            —
+          </strong>
+
+        </div>
+
+      </div>
+
+
+      <button
+        id="pick"
+        class="primary"
+      >
+        📍 Pick Coordinates
+      </button>
+
+
+      <button
+        id="test"
+        class="secondary"
+      >
+        Test Click
+      </button>
+
+
+      <p class="hint">
+        The green ripple shows exactly where
+        the extension clicked.
+      </p>
+
+    </section>
+
+
+    <!-- TIMING -->
+
+    <section>
+
+      <h2>
+        Timing
+      </h2>
+
+
+      <label>
+
+        Refresh interval
+
+        <div class="input-line">
+
+          <input
+            id="interval"
+            type="number"
+            min="1"
+            max="3600"
+            step="1"
+          >
+
+          <span>
+            seconds
+          </span>
+
+        </div>
+
+      </label>
+
+
+      <label>
+
+        Idle delay
+
+        <div class="input-line">
+
+          <input
+            id="idleDelay"
+            type="number"
+            min="0"
+            max="3600"
+            step="1"
+          >
+
+          <span>
+            seconds
+          </span>
+
+        </div>
+
+      </label>
+
+
+      <label>
+
+        Return delay
+
+        <div class="input-line">
+
+          <input
+            id="returnGrace"
+            type="number"
+            min="0"
+            max="60"
+            step="1"
+          >
+
+          <span>
+            seconds
+          </span>
+
+        </div>
+
+      </label>
+
+
+      <button
+        id="save"
+        class="save"
+      >
+        Save Settings
+      </button>
+
+
+      <p class="hint">
+
+        Visible Respond.io can use intervals below
+        30 seconds. Background-tab operation is
+        limited by Chrome's extension scheduler.
+
+      </p>
+
+    </section>
+
+
+    <!-- PROTECTION -->
+
+    <section>
+
+      <h2>
+        Protection
+      </h2>
+
+
+      <div class="features">
+
+        <div>
+          <span>✓</span>
+          Never moves your physical mouse
+        </div>
+
+        <div>
+          <span>✓</span>
+          Doesn't click while typing
+        </div>
+
+        <div>
+          <span>✓</span>
+          Waits after mouse/keyboard activity
+        </div>
+
+        <div>
+          <span>✓</span>
+          Waits after returning to Respond.io
+        </div>
+
+        <div>
+          <span>✓</span>
+          Coordinate-based only
+        </div>
+
+        <div>
+          <span>✓</span>
+          Works while another tab is active
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- SHORTCUT -->
+
+    <section>
+
+      <h2>
+        Keyboard Shortcut
+      </h2>
+
+
+      <div class="shortcut">
+        Alt + Shift + R
+      </div>
+
+
+      <p class="hint">
+        Change this under Chrome extension shortcuts.
+      </p>
+
+    </section>
+
+
+  </div>
+
+
+  <script src="popup.js"></script>
+
+</body>
+
+</html>
+

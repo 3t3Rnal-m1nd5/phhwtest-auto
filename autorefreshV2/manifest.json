@@ -1,0 +1,54 @@
+{
+  "manifest_version": 3,
+
+  "name": "Respond.io Smart Refresher",
+
+  "version": "4.0.0",
+
+  "description": "Coordinate-based Respond.io refresher with typing protection, background refreshing and click indicators.",
+
+  "minimum_chrome_version": "120",
+
+  "permissions": [
+    "storage",
+    "alarms",
+    "tabs",
+    "scripting"
+  ],
+
+  "host_permissions": [
+    "https://app.respond.io/*"
+  ],
+
+  "background": {
+    "service_worker": "background.js"
+  },
+
+  "action": {
+    "default_title": "Respond.io Smart Refresher",
+    "default_popup": "popup.html"
+  },
+
+  "commands": {
+    "toggle-refresher": {
+      "suggested_key": {
+        "default": "Alt+Shift+R",
+        "mac": "Command+Shift+R"
+      },
+      "description": "Toggle Respond.io Smart Refresher"
+    }
+  },
+
+  "content_scripts": [
+    {
+      "matches": [
+        "https://app.respond.io/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}
+
